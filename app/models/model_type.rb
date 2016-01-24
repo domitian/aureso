@@ -1,5 +1,5 @@
-class Model < ActiveRecord::Base
+class ModelType < ActiveRecord::Base
     extend FriendlyId
     friendly_id :name, use: :slugged
-    has_many: model_types
+    belongs_to: model
 end
