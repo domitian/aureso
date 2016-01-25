@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+#
+org = Organisation.create(name: "pekka",public_name: "Pekka",pricing_policy: "Flexible")
+mod = Model.create(name: "serie_100",organisation_id: org.id)
+ModelType.create(name: "bmw_11",base_price: "80000",model_id: mod.id)
