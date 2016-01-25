@@ -14,9 +14,9 @@ require 'json'
 #token = JSON.parse(response)
 
 headers = {
-    access_token: "3vnAHOwm-iNrliWwU7W0fA",
+    access_token: "f-3RzutwEpC3UmlV6X1r8g",
     uid: 'bobba.surendra@gmail.com',
-    client: "lZJ3mFT_DRCydz3MLyTVxA"
+    client: "pLMhR0Sinc6Ya5U8uXdpZw"
 }
 response = RestClient.get 'http://localhost:3000/models/serie_3/model_types',headers
 

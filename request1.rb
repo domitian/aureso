@@ -14,9 +14,9 @@ require 'json'
 #token = JSON.parse(response)
 
 headers = {
-    access_token: "zHW9GDY3mmS0AV157Cqx4w",
+    access_token: "f-3RzutwEpC3UmlV6X1r8g",
     uid: 'bobba.surendra@gmail.com',
-    client: "AjY_y00fSxeGk4T6RWzAEg"
+    client: "pLMhR0Sinc6Ya5U8uXdpZw"
 }
 response = RestClient.post 'http://localhost:3000/models/serie_3/model_types_price/330i', {
 #response = RestClient.post 'https://www.pacreception.com/oauth/token', {
