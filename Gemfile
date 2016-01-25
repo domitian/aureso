@@ -40,6 +40,7 @@ group :development, :test do
 	gem 'factory_girl_rails'
     gem 'bullet'
 	gem 'rack-mini-profiler'
+    gem 'rest-client'
 
 	gem 'simplecov'
 	gem 'mocha', :require => false

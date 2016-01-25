@@ -9,3 +9,5 @@
 org = Organisation.create(name: "pekka",public_name: "Pekka",pricing_policy: "Flexible")
 mod = Model.create(name: "serie_100",organisation_id: org.id)
 ModelType.create(name: "bmw_11",base_price: "80000",model_id: mod.id)
+# creating dummy user for authentication purposes as well
+User.new(email: "bob@gmail.com",password: "aureso",password_confirmation: "aureso").save!(validate: false)
