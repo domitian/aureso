@@ -4,4 +4,7 @@ class ModelType < ActiveRecord::Base
     belongs_to :model
 
     include PricingPolicy
+
+    validates :name,presence: true
+
 end
