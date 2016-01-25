@@ -23,7 +23,7 @@ class ModelTypesController < ApplicationController
 
     def set_model
         begin 
-            @model = Model.friendly.find(params[:model_id])
+            @model = Model.friendly.find(params[:model_slug])
         rescue ActiveRecord::RecordNotFound
             render json: {error: "No Record Found"}
             return

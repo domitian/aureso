@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
-    resources :models do
+    resources :models, param: :slug,only: []  do
         resources :model_types, only: [:index]
+        post 'model_types_price/:model_type_slug' => 'model_types_price#show'
+        #resources :model_types_price, only: [:show],param: :model_type_slug, via: :post
     end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
