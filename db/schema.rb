@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20160124173531) do
     t.string   "slug"
     t.string   "model_type_code"
     t.integer  "base_price"
+    t.integer  "model_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end

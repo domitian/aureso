@@ -7,7 +7,7 @@ module PricingPolicy
 
     class PriceCalculator
 
-        def initialize policy
+        def initialize policy,base_price
             @policy = policy
             @base_price = base_price
         end
