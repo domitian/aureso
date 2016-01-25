@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount_devise_token_auth_for 'User', at: 'auth'
 
     resources :models, param: :slug,only: []  do
         resources :model_types, only: [:index]

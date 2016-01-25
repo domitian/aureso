@@ -1,4 +1,5 @@
 class ModelTypesPriceController < ApplicationController
+    before_action :authenticate_user!
     before_action :set_model_type,only: [:show]
     skip_before_filter :verify_authenticity_token, only: [:show]
 
