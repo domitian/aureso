@@ -1,5 +1,5 @@
 class ModelTypesController < ApplicationController
-    before_action :authenticate_user!, only: [:index] unless Rails.env.test?
+    #before_action :authenticate_user!, only: [:index] unless Rails.env.test?
     before_action :set_model, only: [:index]
 
 
