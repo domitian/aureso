@@ -16,14 +16,12 @@ module PricingPolicy
         end
 
         def get_price
+            margin = send "get_margin_for_#{@policy}".to_sym
             if @policy == "flexible"
-                margin = get_margin_for_flexible
                 price = (@base_price *margin)/100.to_i
             elsif @policy == "fixed"
-                margin = get_margin_for_fixed
                 price = @base_price + margin
             elsif @policy == "prestige"
-                margin = get_margin_for_prestige
                 price = @base_price + margin
             end
             price
@@ -37,6 +35,7 @@ module PricingPolicy
         end
 
         def get_margin_for_fixed
+            # assuming case-sensitiveness
             str = get_text_only_from_html(get_html_code('https://developer.github.com/v3/#http-redirects') )
             str.scan(/status/).count
         end
@@ -54,6 +53,7 @@ module PricingPolicy
 
         def get_text_only_from_html html_str
             text = Nokogiri::HTML(html_str)
+            # Assuming iframe also is part of content of site
             text.css("style,script").remove
             text.at('body').inner_text.to_s
         end
