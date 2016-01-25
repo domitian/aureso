@@ -1,9 +1,9 @@
 FactoryGirl.define do
   factory :model_type do
-    name "MyString"
-    model_type_slug "MyString"
+    sequence(:name) { |n| "model_type_#{n}" }
 model_type_code "MyString"
 base_price 1
+model
   end
 
 end

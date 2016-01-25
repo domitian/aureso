@@ -11,8 +11,8 @@ module PricingPolicy
     class PriceCalculator
 
         def initialize policy,base_price
-            @policy = policy
-            @base_price = base_price
+            @policy = policy.downcase
+            @base_price = base_price.to_i
         end
 
         def get_price

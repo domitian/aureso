@@ -8,6 +8,7 @@ RSpec.describe Model, type: :model do
             expect(build(:model,name: nil)).to_not be_valid
         end
 
+
     end
 
 end

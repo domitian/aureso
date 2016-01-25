@@ -1,5 +1,5 @@
 class ModelTypesPriceController < ApplicationController
-    before_action :authenticate_user!
+    before_action :authenticate_user! unless Rails.env.test?
     before_action :set_model_type,only: [:show]
     skip_before_filter :verify_authenticity_token, only: [:show]
 
@@ -27,7 +27,7 @@ class ModelTypesPriceController < ApplicationController
         begin
             @model_type = ModelType.friendly.find(params[:model_type_slug])
         rescue ActiveRecord::RecordNotFound
-            render json: {errors: "No Record Found"}
+            render json: {errors: "No Record Found"},status: 404
             return
         end
     end

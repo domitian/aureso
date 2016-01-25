@@ -1,5 +1,5 @@
 class ModelTypesController < ApplicationController
-    before_action :authenticate_user!, only: [:index]
+    before_action :authenticate_user!, only: [:index] unless Rails.env.test?
     before_action :set_model, only: [:index]
 
 
@@ -30,7 +30,7 @@ class ModelTypesController < ApplicationController
         begin 
             @model = Model.friendly.find(params[:model_slug])
         rescue ActiveRecord::RecordNotFound
-            render json: {errors: "No Record Found"}
+            render json: {errors: "No Record Found"}, status: 404
             return
         end
     end
